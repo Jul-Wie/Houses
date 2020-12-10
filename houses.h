@@ -6,9 +6,9 @@ public:
 
 int monies = 0;
 
-string name;
-string passwd;
-string secret_passwd;
+std::string name;
+std::string passwd;
+std::string secret_passwd;
 
 void ressetpassword();
 };

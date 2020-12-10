@@ -1,7 +1,6 @@
 #include <iostream>
 #include <limits>
 #include <unistd.h>
-#include <hash>
 #include <houses.h>
 #include <bits/stdc++.h>
 #include <fstream>
@@ -58,7 +57,7 @@ void House::makeAvailable(){
 
 
  House houses[100];
- 
+
   void basement(int &_enteredHasBasementNumber){
     std::string enteredHasBasement;
         cout << "Does it have a basement (y/n): ";
@@ -80,7 +79,7 @@ void House::makeAvailable(){
         }
 
 
-void program(){ 
+void program(){
 
 if(clearNStuff){
 
@@ -266,8 +265,8 @@ if (input == 1){
     if(input == 6){
     Account owo;
     owo.ressetpasswd();
-    
-    
+
+
     }
 }
 
