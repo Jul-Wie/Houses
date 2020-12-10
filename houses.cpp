@@ -1,9 +1,8 @@
 #include <iostream>
 #include <limits>
 #include <unistd.h>
+#include <hash>
 #include <houses.h>
-#include <bits/stdc++.h>
-#include <fstream>
 
 using namespace std;
 
@@ -15,49 +14,12 @@ int housesAMT = 0;
 bool intro = false;
 bool continuePrice;
 
-class House {
-
- public:
-    int id;
-    int price;
-    int houseArea;
-    int fullArea;
-
-
-    bool hasBasement;
-    bool available = true;
-
-    std::string availableOrNot();
-
-    void setPrice(int i);
-    void makeAvailable();
-    void noMoreAvailable();
-    int showID();
-    House() {}
-    House(int insertID){
-    House::id = insertID;
-
-
-
-}
-};
-
-std::string House::availableOrNot(){
- if (House::available){
-    return "Available";
- }
- if (!House::available){
-    return "Not available";
-    }
-}
-void House::makeAvailable(){
-    available = true;
 
 
 
 
  House houses[100];
-
+ 
   void basement(int &_enteredHasBasementNumber){
     std::string enteredHasBasement;
         cout << "Does it have a basement (y/n): ";
@@ -79,7 +41,7 @@ void House::makeAvailable(){
         }
 
 
-void program(){
+void program(){ 
 
 if(clearNStuff){
 
@@ -199,63 +161,6 @@ if (input == 1){
        clearNStuff = 0;
        program();
     }
-
-    if(input == 6){
-      ifstream passwordstorage;
-      passwordstorage.open("password", ios::in);
-      std::string username;
-      std::string correctPsswd_;
-      int correctPsswd;
-      std::string passwd;
-      int hashedpsswd;
-      std::getline(passwordstorage,correctPsswd_);
-
-      cout << "Enter username: "; cin >> username;
-      cout << "Enter password: "; cin >> passwd;
-      hash<string> hash_string;
-      hashedpsswd = hash_string(passwd);
-
-      correctPsswd = std::stoi(correctPsswd_);
-      if(correctPsswd == hashedpsswd){
-        cout << "Succesful" << endl;
-      } else{
-
-        cout << "Unsuccessful" << endl;
-      }
-
-
-
-    }
-    if(input == 7){
-      ofstream passwordstorage;
-      std::string username;
-      std::string password;
-      std::string passwordcheck;
-      int hashedpsswd;
-      int hashedcheckpsswd;
-
-      cout << "Account creation." << endl << "-----------------" << endl;
-      cout << "Enter username: "; cin >> username;
-      cout << "Enter password: "; cin >> password;
-      cout << "passwd = " << password << endl;
-      hash<string> hash_string;
-      hashedpsswd = hash_string(password);
-      cout << "hashed passwd = " << hashedpsswd << endl;
-      cout << "Confirm password: "; cin >> passwordcheck;
-      cout << "checkpasswd = " << password << endl;
-      hashedcheckpsswd = hash_string(passwordcheck);
-      cout << "hashed checkpasswd = " << hashedcheckpsswd << endl;
-      if(password == passwordcheck){
-        cout << "Succesful." << endl;
-        passwordstorage.open("password");
-        passwordstorage << hashedpsswd;
-        passwordstorage.close();
-        program();
-      } else{
-        cout << "Unsuccsful." << endl;
-        program();
-      }
-    }
     else{
         cout << "Invalid input. Enter 0 for help." << endl;
         intro = 0;
@@ -265,8 +170,8 @@ if (input == 1){
     if(input == 6){
     Account owo;
     owo.ressetpasswd();
-
-
+    
+    
     }
 }
 
@@ -277,4 +182,5 @@ int main()
     program();
 
     return 0;
+
 }
