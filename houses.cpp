@@ -1,6 +1,8 @@
 #include <iostream>
 #include <limits>
 #include <unistd.h>
+#include <hash>
+#include <houses.h>
 #include <bits/stdc++.h>
 #include <fstream>
 
@@ -8,20 +10,12 @@ using namespace std;
 
 bool clearNStuff = false;
 void program();
-void checkInput(){
- if (!cin)
- {
-     clearNStuff = 1;
-     program();
 
-
- }
-
-}
 
 int housesAMT = 0;
 bool intro = false;
 bool continuePrice;
+
 class House {
 
  public:
@@ -60,26 +54,11 @@ std::string House::availableOrNot(){
 void House::makeAvailable(){
     available = true;
 
-}
-
-void House::noMoreAvailable(){
-
-available = false;
-
-}
-void House::setPrice(int i){
- if (i < 10000000 && i > 0){
-
-price = i;
-continuePrice = 1;
- } else{
- cout << "Too high / too low." << endl;
-continuePrice = 0;
- }
 
 
-}
- House houses[10];
+
+ House houses[100];
+ 
   void basement(int &_enteredHasBasementNumber){
     std::string enteredHasBasement;
         cout << "Does it have a basement (y/n): ";
@@ -101,7 +80,7 @@ continuePrice = 0;
         }
 
 
-void program(){
+void program(){ 
 
 if(clearNStuff){
 
@@ -283,6 +262,12 @@ if (input == 1){
         intro = 0;
         clearNStuff = 0;
         program();
+    }
+    if(input == 6){
+    Account owo;
+    owo.ressetpasswd();
+    
+    
     }
 }
 
