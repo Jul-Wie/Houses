@@ -1,5 +1,13 @@
-using namespace std;
+#include <string>
 
+using namespace std;
+extern bool clearNStuff;
+extern int housesAMT;
+extern bool intro;
+extern bool continuePrice;
+
+ void program();
+ void checkInput();
 class Account{
 
 public:
@@ -10,7 +18,8 @@ string name;
 string passwd;
 string secret_passwd;
 
-void ressetpassword();
+void ressetpasswd();
+void login();
 };
 
 class House {

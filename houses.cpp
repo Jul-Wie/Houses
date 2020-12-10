@@ -1,25 +1,22 @@
 #include <iostream>
 #include <limits>
 #include <unistd.h>
-#include <hash>
-#include <houses.h>
+#include <bits/stdc++.h>
+#include "houses.h"
 
 using namespace std;
-
-bool clearNStuff = false;
-void program();
-
-
-int housesAMT = 0;
-bool intro = false;
+bool clearNStuff;
+int housesAMT;
+bool intro;
 bool continuePrice;
 
 
 
 
 
+
  House houses[100];
- 
+
   void basement(int &_enteredHasBasementNumber){
     std::string enteredHasBasement;
         cout << "Does it have a basement (y/n): ";
@@ -41,7 +38,7 @@ bool continuePrice;
         }
 
 
-void program(){ 
+void program(){
 
 if(clearNStuff){
 
@@ -161,24 +158,33 @@ if (input == 1){
        clearNStuff = 0;
        program();
     }
+    if(input == 6){
+      Account tempacc;
+      tempacc.login();
+
+    }
+    if(input == 7){
+    Account tempacc;
+    tempacc.ressetpasswd();
+
+
+    }
     else{
         cout << "Invalid input. Enter 0 for help." << endl;
         intro = 0;
         clearNStuff = 0;
         program();
     }
-    if(input == 6){
-    Account owo;
-    owo.ressetpasswd();
-    
-    
-    }
+
 }
 
 
 
 int main()
 {
+   clearNStuff = false;
+   housesAMT = 0;
+   intro = false;
     program();
 
     return 0;
