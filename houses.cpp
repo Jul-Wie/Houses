@@ -100,7 +100,7 @@ if (input == 1){
         program();
 
     }
-    if (input == 2){
+    else if (input == 2){
         cout << "List of houses:" << endl;
         for(int i = 0; i < housesAMT; i++){
 
@@ -110,13 +110,13 @@ if (input == 1){
         clearNStuff = 0;
         program();
     }
-    if (input == 3){
+    else if (input == 3){
         int enteredid = 0;
         cout << "Enter ID of house to mark: ";
         cin >> enteredid;
        checkInput();
 
-        if(enteredid < housesAMT){
+        else if(enteredid < housesAMT){
             int availOrUnavail;
             cout << "1. Mark as available" << endl << "2. Mark as unavailable" << endl;
             cin >> availOrUnavail;
@@ -136,13 +136,13 @@ if (input == 1){
 
     }
 
-    if(input == 4){
+    else if(input == 4){
         system("clear");
         intro = 0;
         clearNStuff = 0;
         program();
     }
-    if(input == 5){
+    else if(input == 5){
         int enteredID, enteredPrice;
         cout << "ID of house to change price of: ";
         cin >> enteredID;
@@ -158,12 +158,12 @@ if (input == 1){
        clearNStuff = 0;
        program();
     }
-    if(input == 6){
+    else if(input == 6){
       Account tempacc;
       tempacc.login();
 
     }
-    if(input == 7){
+    else if(input == 7){
     Account tempacc;
     tempacc.ressetpasswd();
 
