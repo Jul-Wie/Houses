@@ -48,3 +48,12 @@ class House {
 
 }
 };
+ extern House houses[100];
+void basement(int &_enteredHasBasementNumber);
+void inputIs1();
+void inputIs2();
+void inputIs3();
+void inputIs4();
+void inputIs5();
+void inputIs6();
+void inputIs7();

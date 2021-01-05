@@ -13,9 +13,9 @@ bool continuePrice;
 
 
 
+House houses[100];
 
 
- House houses[100];
 
   void basement(int &_enteredHasBasementNumber){
     std::string enteredHasBasement;
@@ -69,104 +69,29 @@ cout << "Invalid input.";
     }
 
 if (input == 1){
-        int enteredPrice;
-        int enteredHouseArea;
-        int enteredFullArea;
-        std::string basementText;
-        int enteredHasBasementNumber;
-
-        houses[housesAMT] = House(housesAMT);
-        cout << "Enter area of the house (do not include garden, etc.) in m2: ";
-        cin >> enteredHouseArea;
-        checkInput();
-        cout << "Enter full area(include gardern, surrounding area, etc.): ";
-        cin >> enteredFullArea;
-        checkInput();
-        basement(enteredHasBasementNumber);
-        if(enteredHasBasementNumber = 1){
-            basementText = " and with a basement ";
-        }
-        if(enteredHasBasementNumber = 0){
-            basementText = " and without a basement ";
-        }
-           enteredPrice = enteredHouseArea * 2000 + (enteredFullArea - enteredHouseArea) * 700 + enteredHasBasementNumber * 50000;
-        houses[housesAMT].setPrice(enteredPrice);
-        if(continuePrice){
-        cout << "A house with ID " << houses[housesAMT].id << ", price " << enteredPrice << basementText << " has been created." << endl << endl;
-        }
-        housesAMT++;
-        intro = 0;
-        clearNStuff = 0;
-        program();
+        inputIs1();
 
     }
     else if (input == 2){
-        cout << "List of houses:" << endl;
-        for(int i = 0; i < housesAMT; i++){
-
-            cout << "     House " << houses[i].id << ": " << endl << "          availability: " <<houses[i].availableOrNot() << endl << "          price: " << houses[i].price << endl;
-        }
-        intro = 0;
-        clearNStuff = 0;
-        program();
+        inputIs2();
     }
     else if (input == 3){
-        int enteredid = 0;
-        cout << "Enter ID of house to mark: ";
-        cin >> enteredid;
-       checkInput();
-
-        else if(enteredid < housesAMT){
-            int availOrUnavail;
-            cout << "1. Mark as available" << endl << "2. Mark as unavailable" << endl;
-            cin >> availOrUnavail;
-             checkInput();
-            if(availOrUnavail == 1){
-                houses[enteredid].makeAvailable();
-                clearNStuff = 0;
-                program();
-            }
-            if(availOrUnavail == 2){
-                houses[enteredid].noMoreAvailable();
-                intro = 0;
-                clearNStuff = 0;
-                program();
-            }
-        }
+      inputIs3();
 
     }
 
     else if(input == 4){
-        system("clear");
-        intro = 0;
-        clearNStuff = 0;
-        program();
+      inputIs4();
     }
     else if(input == 5){
-        int enteredID, enteredPrice;
-        cout << "ID of house to change price of: ";
-        cin >> enteredID;
-          checkInput();
-        cout <<"New price: ";
-        cin >> enteredPrice;
-          if (!cin)
-           checkInput();
-
-       houses[enteredID].setPrice(enteredPrice);
-       cout << "Price of house " << enteredID << " has been changed to " << enteredPrice << "." << endl << endl;
-       intro = 0;
-       clearNStuff = 0;
-       program();
+      inputIs5();
     }
     else if(input == 6){
-      Account tempacc;
-      tempacc.login();
+      inputIs6();
 
     }
     else if(input == 7){
-    Account tempacc;
-    tempacc.ressetpasswd();
-
+        inputIs7();
 
     }
     else{
@@ -185,8 +110,7 @@ int main()
    clearNStuff = false;
    housesAMT = 0;
    intro = false;
-    program();
-
+inputIs6();
     return 0;
 
 }
