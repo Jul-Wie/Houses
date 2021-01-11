@@ -29,10 +29,13 @@ void Account::login(){
   readPasswd >> passwdRead;
   if(passwdRead == hshdPsswd){
     cout << "Login succeful." << endl;
+    readPasswd.close();
     program();
+
   }else{
     cout << "Login unsucceful." << endl;
-    program();
+    readPasswd.close();
+    inputIs6();
   }
 
 

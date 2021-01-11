@@ -107,8 +107,40 @@ if (input == 1){
 
 int main()
 {
+housesAMT = 0;
+  ifstream l;
+  l.open("l");
+  if(l){
+  int i;
+  string s_line;
+  int line;
+  i = 0;
+  while(getline(l, s_line)){
+    line = stoi(s_line);
+  if(i == 0){
+    houses[housesAMT].id = line;
+  }
+  else if(i == 1){
+    houses[housesAMT].price = line;
+  }
+  else if(i == 2){
+    houses[housesAMT].hasBasement = line;
+  }
+  else if (i == 3){
+    houses[housesAMT].available;
+  }
+  i++;
+
+}
+housesAMT++;
+
+  cout << "Imported house with ID 0" << endl;
+}
+else{
+  cout << "Didn't import any saved houses." << endl;
+}
+
    clearNStuff = false;
-   housesAMT = 0;
    intro = false;
 inputIs6();
     return 0;

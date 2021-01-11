@@ -18,6 +18,7 @@ void inputIs1(){
   cin >> enteredFullArea;
   checkInput();
   basement(enteredHasBasementNumber);
+  houses[housesAMT].hasBasement = enteredHasBasementNumber;
   if(enteredHasBasementNumber = 1){
       basementText = " and with a basement ";
   }
@@ -29,6 +30,12 @@ void inputIs1(){
   if(continuePrice){
   cout << "A house with ID " << houses[housesAMT].id << ", price " << enteredPrice << basementText << " has been created." << endl << endl;
   }
+  ofstream l;
+  l.open("l");
+  
+  l << houses[housesAMT].id << endl << houses[housesAMT].price << endl << houses[housesAMT].hasBasement << endl << houses[housesAMT].available;
+  l.close();
+
   housesAMT++;
   intro = 0;
   clearNStuff = 0;
@@ -36,6 +43,7 @@ void inputIs1(){
 
 }
 void inputIs2(){
+cout << "Amount of houses: " << housesAMT << endl;
   cout << "List of houses:" << endl;
   for(int i = 0; i < housesAMT; i++){
 
