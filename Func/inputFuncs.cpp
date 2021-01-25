@@ -1,4 +1,4 @@
-#include "houses.h"
+#include "../Headers/houses.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -32,7 +32,7 @@ void inputIs1(){
   }
   ofstream l;
   l.open("l");
-  
+
   l << houses[housesAMT].id << endl << houses[housesAMT].price << endl << houses[housesAMT].hasBasement << endl << houses[housesAMT].available;
   l.close();
 
@@ -122,5 +122,5 @@ inputIs7();
   cout << "Invalid input." << endl;
   inputIs6();
 
-}
+  }
 }
