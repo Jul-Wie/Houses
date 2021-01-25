@@ -83,7 +83,7 @@ int main()
 {
 housesAMT = 0;
   ifstream l;
-  l.open("l");
+  l.open("data/l");
   if(l){
   int i;
   string s_line;

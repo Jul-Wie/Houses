@@ -15,7 +15,7 @@ void Account::login(){
   cout << "Enter password: ";
   cin >> psswdInput;
   hshdPsswd = hash_stringIn(psswdInput);
-  readPasswd.open("password");
+  readPasswd.open("data/password");
   readPasswd >> passwdRead;
 
   if(passwdRead == hshdPsswd){
@@ -46,7 +46,7 @@ void Account::login(){
 
       secret_passwd = passwd;
       secret_passwd_ = hash_string(passwd);
-      passwdStorage.open("password");
+      passwdStorage.open("data/password");
       passwdStorage << secret_passwd_;
       passwdStorage.close();
       passwd = "";

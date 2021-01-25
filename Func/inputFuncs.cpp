@@ -31,7 +31,7 @@ void inputIs1(){
   cout << "A house with ID " << houses[housesAMT].id << ", price " << enteredPrice << basementText << " has been created." << endl << endl;
   }
   ofstream l;
-  l.open("l");
+  l.open("data/l");
 
   l << houses[housesAMT].id << endl << houses[housesAMT].price << endl << houses[housesAMT].hasBasement << endl << houses[housesAMT].available;
   l.close();
